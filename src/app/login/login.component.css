@@ -25,3 +25,7 @@ body {
     background-color: #f69044;
     color:white;
   }
+
+  a:hover{
+      color:#f69044 !important;
+  }
