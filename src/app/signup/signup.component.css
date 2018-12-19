@@ -1,0 +1,45 @@
+body {
+    background-color: #f69044;
+    height: 105vh;
+    background: url("/assets/images/background.jpg");
+    background-size:cover;
+  
+  }
+  #login .container #login-row #login-column .login-box {
+    margin-top: 60px;
+    max-width: 600px;
+    height: 600x;
+    border: 1px solid #9C9C9C;
+    background: #8C1717;
+    box-shadow: black 0.1em 0.1em 0.2em;
+  }
+  #login .container #login-row #login-column .login-box #login-form {
+    padding: 20px;
+  }
+  #login .container #login-row #login-column .login-box #login-form #register-link {
+    margin-top: -50px;
+  }
+
+  .text-info{
+      color: white !important;
+      text-shadow: black 0.1em 0.1em 0.2em;
+  }
+
+  #submit{
+    background-color: #f69044;
+    color:black;
+  }
+
+  #submit:hover{
+    background-color: #DD813D;
+    text-emphasis-color: #B06730;
+  }
+
+  #link:hover{
+      color:#f69044 !important;
+  }
+
+  #error{
+    color: white;
+    font-size:12px;
+  }

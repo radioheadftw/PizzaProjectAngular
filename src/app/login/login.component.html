@@ -5,21 +5,23 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!------ Include the above in your HEAD tag ---------->
 </head>
-<body>
+<body>           
 	<div id="login">
     <div class="container">
         <div id="login-row" class="row justify-content-center align-items-center">
             <div id="login-column" class="col-md-6">
                 <div class="login-box col-md-12">
-                    <form id="login-form" class="form" action="" method="post">
+                    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="login-form" class="form" action="" method="post">
                         <h3 class="text-center text-info">Login</h3>
                         <div class="form-group">
                             <label for="username" class="text-info">Username:</label><br>
-                            <input type="text" name="username" id="username" class="form-control">
+                            <input type="text" formControlName = "username" name="username" id="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+                            <div id = "error" *ngIf="f.username.errors?.required && submitted && f.username.errors">Username is required.</div>
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
-                            <input type="text" name="password" id="password" class="form-control">
+                            <input type="text" formControlName="password" name="password" id="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                            <div id = "error" *ngIf="f.password.errors?.required && submitted && f.password.errors">Password is required.</div>
                         </div>
                         <div></div>
                         <div class="form-group">
@@ -27,7 +29,7 @@
                         </div>
                         <br>
                         <div id="register-link" class="text-right">
-                            <a href="/createaccount" class="text-info">Sign up here</a>
+                            <a href="/createaccount" class="text-info" id="link">Sign up here</a>
                         </div>
                     </form>
                 </div>
