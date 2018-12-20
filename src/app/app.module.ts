@@ -15,6 +15,7 @@ import { DealsComponent } from './deals/deals.component';
 import { CartComponent } from './cart/cart.component';
 import { TrackerComponent } from './tracker/tracker.component';
 import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from './services/alert.service';
 
 
 
