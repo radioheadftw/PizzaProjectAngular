@@ -20,7 +20,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
-                            <input type="text" formControlName="password" name="password" id="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+                            <input type="password" formControlName="password" name="password" id="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
                             <div id = "error" *ngIf="f.password.errors?.required && submitted && f.password.errors">Password is required.</div>
                         </div>
                         <div></div>

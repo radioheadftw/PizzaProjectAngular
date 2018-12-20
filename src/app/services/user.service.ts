@@ -19,7 +19,7 @@ export class UserService {
     // }
 
     register(user: Users) {
-        return this.http.post(`${config}/createaccount`, user);
+        return this.http.post(config + '/createaccount', user);
     }
 
     // update(user: Users) {

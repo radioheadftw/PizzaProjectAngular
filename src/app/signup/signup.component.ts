@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
             username: ['', Validators.required],
             address: ['', Validators.required],
             phoneNumber: ['', Validators.required],
-            password: ['', [Validators.required, Validators.minLength(6)]],
+            password: ['', [Validators.required]],
             email: ['', Validators.required]
         });
     }
@@ -42,17 +42,15 @@ export class SignupComponent implements OnInit {
 
     onSubmit() {
         this.submitted = true;
-
         if (this.registerForm.invalid) {
             return;
         }
-
         this.loading = true;
         this.userService.register(this.registerForm.value)
             .pipe(first())
             .subscribe(
                 data => {
-                    this.alertService.success('Registration successful', true);
+                    // this.alertService.success('Registration successful', true);
                     this.router.navigate(['/login']);
                 },
                 error => {

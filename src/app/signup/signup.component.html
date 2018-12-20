@@ -11,7 +11,7 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div class="login-box col-md-12">
-                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" id="login-form" class="form" action="" method="post">
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" id="register-form" class="form" action="" method="post">
                             <h3 class="text-center text-info">Sign Up</h3>
                             <div class="form-group">
                                 <label for="username" class="text-info">Username:</label><br>
@@ -20,7 +20,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="password" class="text-info">Password:</label><br>
-                                <input type="text" formControlName = "password" name="password" id="password" class="form-control"/>
+                                <input type="password" formControlName = "password" name="password" id="password" class="form-control"/>
                                 <div id = "error" *ngIf="f.password.errors?.required && submitted && f.password.errors">Password is required.</div>
                             </div>
                             <div class="form-group">

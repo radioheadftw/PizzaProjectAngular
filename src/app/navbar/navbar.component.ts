@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -12,4 +13,16 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  onClick() {
+    localStorage.removeItem('currentUser');
+    window.location.href = 'http://localhost:4200/login';
+  }
+
+  readLocalStorageValue() {
+    const key = localStorage.getItem('currentUser');
+    if (key === null) {
+      return undefined;
+    }
+    return true;
+  }
 }

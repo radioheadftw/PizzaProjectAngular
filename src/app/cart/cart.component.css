@@ -4,3 +4,10 @@ body{
     background: url("/assets/images/background.jpg");
     background-size:cover;
 }
+
+#underconstruction{
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
+    padding:80px;
+}

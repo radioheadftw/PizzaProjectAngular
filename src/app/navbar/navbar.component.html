@@ -13,13 +13,14 @@
     <div class="navbar-nav" id="navbar-left">
       <a class="nav-item nav-link" routerLink="home" id="first">Home <span class="sr-only"></span></a>
       <a class="nav-item nav-link" routerLink="menu">Menu</a><hr>
-      <a class="nav-item nav-link disabled" routerLink = "deals">Deals</a>
-      <a class="nav-item nav-link disabled" routerLink="tracker">Tracker</a>
-      <a class="nav-item nav-link disabled" routerLink="cart">Cart</a>
+      <a class="nav-item nav-link" *ngIf="readLocalStorageValue() === true" routerLink="deals">Deals</a>
+      <a class="nav-item nav-link" *ngIf="readLocalStorageValue() === true" routerLink="tracker">Tracker</a>
+      <a class="nav-item nav-link" *ngIf="readLocalStorageValue() === true" routerLink="cart">Cart</a>
     </div>
   </div>
   <div class="navbar-nav" id="navbar-right">
-    <a class="nav-item nav-link" routerLink="createaccount">SignUp</a>
-    <a class="nav-item nav-link" routerLink="login">LogIn</a>
+    <a class="nav-item nav-link" *ngIf="readLocalStorageValue() === undefined" routerLink="createaccount">SignUp</a>
+    <a class="nav-item nav-link" *ngIf="readLocalStorageValue() === undefined" routerLink="login">LogIn</a>
+    <a class="nav-item nav-link" *ngIf="readLocalStorageValue() === true" routerLink="login" (click)="onClick()">LogOut</a>
   </div>
 </nav>
