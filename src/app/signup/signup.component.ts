@@ -21,7 +21,6 @@ export class SignupComponent implements OnInit {
         private userService: UserService,
         private alertService: AlertService
     ) {
-        // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) {
             this.router.navigate(['/']);
         }
@@ -33,18 +32,16 @@ export class SignupComponent implements OnInit {
             lastName: ['', Validators.required],
             username: ['', Validators.required],
             address: ['', Validators.required],
-            phonenumber: ['', Validators.required],
+            phoneNumber: ['', Validators.required],
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
     }
 
-    // convenience getter for easy access to form fields
     get f() { return this.registerForm.controls; }
 
     onSubmit() {
         this.submitted = true;
 
-        // stop here if form is invalid
         if (this.registerForm.invalid) {
             return;
         }

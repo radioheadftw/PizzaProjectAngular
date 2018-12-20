@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { Users } from '../models/users';
+import { map } from 'rxjs/operators';
 
 // const config = 'http://ec2-54-202-187-64.us-west-2.compute.amazonaws.com:8080/Pizza';
-const config = 'http://localhost:8080/PizzaOrdering/login';
+const config = 'http://localhost:8080/PizzaOrdering';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -24,13 +25,17 @@ export class AuthenticationService {
         const users = new Users();
         users.password = password;
         users.username = username;
-        console.log(users);
-        console.log(config);
-        return this.http.post<Users>(config, users);
+        return this.http.post<Users>(config + '/login', users)
+        .pipe(map(user => {
+            if (user != null) {
+                localStorage.setItem('currentUser', JSON.stringify(user));
+                this.currentUserSubject.next(user);
+            }
+            return user;
+        }));
     }
 
     logout() {
-        // remove user from local storage to log user out
         localStorage.removeItem('currentUser');
         this.currentUserSubject.next(null);
     }

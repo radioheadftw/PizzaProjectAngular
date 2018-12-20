@@ -4,7 +4,7 @@ export class Users {
     lastName: string;
     username: string;
     password: string;
-    typeId: number;
+    address: string;
     phoneNumber: string;
     email: string;
     isDriver: boolean;
