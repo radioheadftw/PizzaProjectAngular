@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Order} from '../models/order';
-import { LineItem } from '../models/lineitem';
-import { Users } from '../models/users';
-import { OrderService} from '../services/order.service';
+import { Order } from '../models/order';
+import {OrderService} from '../services/order.service';
 
 
 @Component({
@@ -12,56 +10,51 @@ import { OrderService} from '../services/order.service';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private orderService: OrderService
+  ) { }
 
   ngOnInit() {
   }
 
   buyLargePepperoni() {
     const customerOrder = new Order();
-    const lineItem = new LineItem();
-    lineItem.description = 'Large Pepperoni Pizza';
-    lineItem.price = 11.99;
-    lineItem.quantity = 1;
-    console.log(lineItem.quantity +  ' x ' + lineItem.description + 'Price: $' + lineItem.price );
+    customerOrder.description = 'Large Pepperoni Pizza';
+    customerOrder.price = 11.99;
+    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
+    this.orderService.submitOrder(customerOrder);
   }
 
   buyLargeVeggie() {
     const customerOrder = new Order();
-    const lineItem = new LineItem();
-    lineItem.description = 'Large Veggie Pizza';
-    lineItem.price = 13.99;
-    lineItem.quantity = 1;
-    console.log(lineItem.quantity +  ' x ' + lineItem.description + 'Price: $' + lineItem.price );
+    customerOrder.description = 'Large Veggie Pizza';
+    customerOrder.price = 13.99;
+    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
+    this.orderService.submitOrder(customerOrder);
   }
 
   buyLargeBBQChicken() {
     const customerOrder = new Order();
-    const lineItem = new LineItem();
-    lineItem.description = 'Large BBQ Chicken Pizza';
-    lineItem.price = 13.99;
-    lineItem.quantity = 1;
-    console.log(lineItem.quantity +  ' x ' + lineItem.description + 'Price: $' + lineItem.price );
+    customerOrder.description = 'Large BBQ Chicken Pizza';
+    customerOrder.price = 13.99;
+    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
+    this.orderService.submitOrder(customerOrder);
   }
 
   buyLargeAllMeat() {
     const customerOrder = new Order();
-    const lineItem = new LineItem();
-
-    lineItem.description = 'Large All Meat Pizza';
-    lineItem.price = 13.99;
-    lineItem.quantity = 1;
-    console.log(lineItem.quantity +  ' x ' + lineItem.description + 'Price: $' + lineItem.price );
+    customerOrder.description = 'Large All Meat Pizza';
+    customerOrder.price = 13.99;
+    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
+    this.orderService.submitOrder(customerOrder);
   }
 
   buyLargeCheese() {
     const customerOrder = new Order();
-    const lineItem = new LineItem();
-    lineItem.description = 'Large Cheese Pizza';
-    lineItem.price = 8.99;
-    lineItem.quantity = 1;
-
-    console.log(lineItem.quantity +  ' x ' + lineItem.description + 'Price: $' + lineItem.price );
+    customerOrder.description = 'Large Cheese Pizza';
+    customerOrder.price = 8.99;
+    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
+    this.orderService.submitOrder(customerOrder);
   }
 
   readLocalStorageValue() {

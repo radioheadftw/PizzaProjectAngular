@@ -1,14 +1,8 @@
 
-import {LineItem} from './lineitem';
 
 export class Order {
+    id: number;
     customerId: number;
-    total: number;
-    driverId: number;
-    complete: boolean;
-    lineItems: LineItem[];
-
-    addLineItem(item: LineItem) {
-        this.lineItems.push(item);
-    }
+    description: string;
+    price: number;
 }
