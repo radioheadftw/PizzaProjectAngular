@@ -16,7 +16,7 @@ export class OrderService {
         let user = new Users();
         user = JSON.parse(localStorage.getItem('currentUser'));
         console.log(user);
-        order.customerId = user.userId;
+        /*order.customerId = user.userId;*/
         console.log(order);
         return this.http.post(url, order)
         .subscribe(

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Order } from '../models/order';
 import {OrderService} from '../services/order.service';
+import { Users } from '../models/users';
 
 
 @Component({
@@ -17,44 +18,34 @@ export class MenuComponent implements OnInit {
   ngOnInit() {
   }
 
-  buyLargePepperoni() {
+  sendOrder(order: string, price: number) {
     const customerOrder = new Order();
-    customerOrder.description = 'Large Pepperoni Pizza';
-    customerOrder.price = 11.99;
+    const newUsers = JSON.parse(localStorage.getItem('currentUser'));
+    customerOrder.setCustomer(JSON.parse(localStorage.getItem('currentUser')));
+    console.log('the customer item: ' + customerOrder.customerId);
+    customerOrder.description = order;
+    customerOrder.price = price;
     console.log(customerOrder.description + 'Price: $' + customerOrder.price);
     this.orderService.submitOrder(customerOrder);
+  }
+  buyLargePepperoni() {
+    this.sendOrder('Large Pepperonni', 11.99);
   }
 
   buyLargeVeggie() {
-    const customerOrder = new Order();
-    customerOrder.description = 'Large Veggie Pizza';
-    customerOrder.price = 13.99;
-    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
-    this.orderService.submitOrder(customerOrder);
+    this.sendOrder('Large Veggie', 13.99);
   }
 
   buyLargeBBQChicken() {
-    const customerOrder = new Order();
-    customerOrder.description = 'Large BBQ Chicken Pizza';
-    customerOrder.price = 13.99;
-    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
-    this.orderService.submitOrder(customerOrder);
+    this.sendOrder('Large BBQ Chicken', 13.99);
   }
 
   buyLargeAllMeat() {
-    const customerOrder = new Order();
-    customerOrder.description = 'Large All Meat Pizza';
-    customerOrder.price = 13.99;
-    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
-    this.orderService.submitOrder(customerOrder);
+    this.sendOrder('Large All Meat', 14.99);
   }
 
   buyLargeCheese() {
-    const customerOrder = new Order();
-    customerOrder.description = 'Large Cheese Pizza';
-    customerOrder.price = 8.99;
-    console.log(customerOrder.description + 'Price: $' + customerOrder.price);
-    this.orderService.submitOrder(customerOrder);
+    this.sendOrder('Large Cheese', 8.99);
   }
 
   readLocalStorageValue() {
