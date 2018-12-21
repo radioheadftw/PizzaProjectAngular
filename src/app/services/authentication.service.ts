@@ -4,8 +4,8 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { Users } from '../models/users';
 import { map } from 'rxjs/operators';
 
-// const config = 'http://ec2-54-202-187-64.us-west-2.compute.amazonaws.com:8080/Pizza';
-const config = 'http://localhost:8080/PizzaOrdering';
+const config = 'http://ec2-54-202-187-64.us-west-2.compute.amazonaws.com:8080/Pizza';
+// const config = 'http://localhost:8080/PizzaOrdering';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {

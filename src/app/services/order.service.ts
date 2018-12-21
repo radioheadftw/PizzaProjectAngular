@@ -4,7 +4,8 @@ import { Order } from '../models/order';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Users } from '../models/users';
 
-const url = 'http://localhost:8080/PizzaOrdering/menu';
+// const url = 'http://localhost:8080/PizzaOrdering/menu';
+const url = 'http://ec2-54-202-187-64.us-west-2.compute.amazonaws.com:8080/Pizza/menu';
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {

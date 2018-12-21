@@ -8,77 +8,94 @@
         </div>
         <br>
         <a href="/login" id = "login" *ngIf="readLocalStorageValue() === undefined">Log in to order!</a>
+        <br>
+        <br>
         <!-- Item starts -->
         <div class="menu-item">
+            <img src="../../assets/images/pepperoni.jpg" class="pics" style=float:left/>
             <div class="menu-item-name">
                 Pepperoni
+                <button class="menu-button" id="lgPep" (click)="buyLargePepperoni()" *ngIf="readLocalStorageValue() === true">Buy</button>
             </div>
             <div class="menu-item-description">
                 Tomato Sauce, Cheese, Pepporoni
             </div>
-            <div>
-                <button class="menu-button" id="lgPep" (click)="buyLargePepperoni()" *ngIf="readLocalStorageValue() === true">Buy</button>
-            </div>
-
+            <br>
         </div>
         <!-- Item ends -->
-
+        <br>
+        <br>
+        <br>
         <!-- Item starts -->
         <div class="menu-item">
+            <div class = "picsdiv">
+            <img src="../../assets/images/veggie.jpg" class="pics" style=float:left/>
+            </div>
             <div class="menu-item-name">
                 Veggie
+                <button class="menu-button" id="lgPep" (click)="buyLargeVeggie()" *ngIf="readLocalStorageValue() === true">Buy</button>
             </div>
             <div class="menu-item-description">
                 Tomoato Sauce, Cheese, Green peppers, mushrooms, onion, olives
             </div>
-            <div>
-                <button class="menu-button" id="lgPep" (click)="buyLargeVeggie()" *ngIf="readLocalStorageValue() === true">Buy</button>
-            </div>
+            <br>
         </div>
         <!-- Item ends -->
-
+        <br>
+        <br>
+        <br>
         <!-- Item starts -->
         <div class="menu-item">
+            <div class = "picsdiv">
+                <img src="../../assets/images/bbq.jpg" class="pics" style=float:left/>
+            </div>
             <div class="menu-item-name">
                 BBQ Chicken
+                <button class="menu-button" id="lgPep" (click)="buyLargeBBQChicken()" *ngIf="readLocalStorageValue() === true">Buy</button>
             </div>
             <div class="menu-item-description">
                 BBQ Sauce, Cheese, Pepperoni, Ham, Sausage, Bacon
             </div>
-            <div>
-                <button class="menu-button" id="lgPep" (click)="buyLargeBBQChicken()" *ngIf="readLocalStorageValue() === true">Buy</button>
-            </div>
+            <br>
         </div>
         <!-- Item ends -->
-
+        <br>
+        <br>
+        <br>
         <!-- Item starts -->
         <div class="menu-item">
+                <div class = "picsdiv">
+                    <img src="../../assets/images/meat.jpg" class="pics" style=float:left/>
+                </div>
             <div class="menu-item-name">
                 All Meat
+                <button class="menu-button" id="lgPep" (click)="buyLargeAllMeat()" *ngIf="readLocalStorageValue() === true">Buy</button>         
             </div>
             <div class="menu-item-description">
                 Tomato Sauce, Cheese, Onions, Chicken
             </div>
-            <div>
-                <button class="menu-button" id="lgPep" (click)="buyLargeAllMeat()" *ngIf="readLocalStorageValue() === true">Buy</button>
-            </div>
+            <br>
         </div>
         <!-- Item ends -->
-
+        <br>
+        <br>
+        <br>
     </div>
     <div class="menu-body">
 
         <!-- Item starts -->
         <div class="menu-item">
+                <div class = "picsdiv">
+                    <img src="../../assets/images/cheese.jpg" class="pics" style=float:left/>
+                </div>
             <div class="menu-item-name">
                 Cheese
+                <button class="menu-button" id="lgPep" (click)="buyLargeCheese()" *ngIf="readLocalStorageValue() === true">Buy</button>
             </div>
             <div class="menu-item-description">
                 Tomato Sauce, Cheese
             </div>
-            <div>
-                <button class="menu-button" id="lgPep" (click)="buyLargeCheese()" *ngIf="readLocalStorageValue() === true">Buy</button>
-            </div>
+            <br>
         </div>
         <!-- Item ends -->
     </div>

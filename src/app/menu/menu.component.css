@@ -1,6 +1,6 @@
 body{
     background-color: #f69044;
-    height: 120vh;
+    height: 225vh;
     background: url("/assets/images/background.jpg");
     background-size: cover;
 }
@@ -10,7 +10,7 @@ body{
   font-size: 24px;
   text-shadow: black 0.1em 0.1em 0.2em;
   display: inline-block;
-  margin-left:215px;
+  margin-left:260px;
 }
 
 
@@ -88,10 +88,10 @@ body{
   #all{
     position:relative;
     top:80px;
-    max-width: 650px;
+    max-width: 750px;
     margin-left: auto;
     margin-right: auto;
-    height: 820px;
+    height: 1510px;
     border: 1px solid #9C9C9C;
     background: #8C1717;
     box-shadow: black 0.1em 0.1em 0.2em;
@@ -104,4 +104,13 @@ body{
 
   #pizzaright{
     margin-left: 80px;
+  }
+  .pics{
+    padding-right: 20px;
+  }
+
+  #lgPep{
+    font-size: 22px;
+    position:relative;
+    bottom:-18px;
   }

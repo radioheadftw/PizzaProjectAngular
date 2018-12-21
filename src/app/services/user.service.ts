@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 import { Users } from '../models/users';
 
-// const config = 'http://ec2-54-202-187-64.us-west-2.compute.amazonaws.com:8080';
-const config = 'http://localhost:8080/PizzaOrdering';
+const config = 'http://ec2-54-202-187-64.us-west-2.compute.amazonaws.com:8080/Pizza';
+//const config = 'http://localhost:8080/PizzaOrdering';
 
 @Injectable({ providedIn: 'root' })
 export class UserService {
